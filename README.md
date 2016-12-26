@@ -1,0 +1,2 @@
+# 8-bit-String
+Oracle has a genuine reason to store characters in a 16-bit format in the standard package String class. But what if we don't need 16 bits to represent our strings? Having less bits means faster processing times and less memory usage. Unfortunately Java doesn't provide an 8-bit version. So this is my attempt at implementing an 8-bit string class. I tried to adhere the standard as much as possible and to build in such a way it will interact correctly with the "normal" String class.
