@@ -10,12 +10,15 @@ public class String8Bit {
 	}
 
 	public String8Bit(byte[] str) {
+		this.str = new byte[str.length];
 		System.arraycopy(str, 0, this.str, 0, str.length);
 	}
 	
 	public String8Bit(char[] str) {
 		this.str = new byte[str.length];
-		System.arraycopy(str, 0, this.str, 0, str.length);
+		for (int i = 0; i < str.length; i++) {
+			this.str[i] = (byte) str[i];
+		}
 	}
 
 	public int length() {
