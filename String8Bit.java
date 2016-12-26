@@ -54,6 +54,10 @@ public class String8Bit {
 		return strbyte;
 	}
 	
+	public boolean isEmpty() {
+		return (str.length == 0) ? true : false;
+	}
+	
 	public int length() {
 		return str.length;
 	}
