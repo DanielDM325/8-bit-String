@@ -39,7 +39,7 @@ public class String8Bit {
 	public String8Bit concat(String str) {
 		byte[] concatstr = new byte[this.str.length + str.length()];
 		System.arraycopy(this.str, 0, concatstr, 0, this.str.length);
-		for (int i = this.str.length + 1; i < this.str.length + str.length(); i++) {
+		for (int i = this.str.length; i < this.str.length + str.length(); i++) {
 			concatstr[i] = (byte) str.charAt(i - this.str.length);
 		}
 		return new String8Bit(concatstr);
@@ -48,7 +48,7 @@ public class String8Bit {
 	public String8Bit concat(String8Bit str) {
 		byte[] concatstr = new byte[this.str.length + str.length()];
 		System.arraycopy(this.str, 0, concatstr, 0, this.str.length);
-		System.arraycopy(str, 0, concatstr, this.str.length + 1, str.length());
+		System.arraycopy(str.str, 0, concatstr, this.str.length, str.length());
 		return new String8Bit(concatstr);
 	}
 
