@@ -116,6 +116,24 @@ public class String8Bit {
 		return (str.length == 0) ? true : false;
 	}
 	
+	public int lastIndexOf(int ch) {
+		if (ch >= 256 || ch < 0) {
+			return -1;
+		}
+		for (int i = str.length - 1; i >= 0; i--) {
+			if (str[i] < 0) {
+				if (ch == (str[i] & 0xFF)) {
+					return i;
+				}
+			} else {
+				if (ch == str[i]) {
+					return i;
+				}
+			} 
+		}
+		return -1;
+	}
+	
 	public int length() {
 		return str.length;
 	}
