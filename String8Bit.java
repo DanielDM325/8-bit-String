@@ -48,6 +48,22 @@ public class String8Bit {
 		return new String8Bit(concatstr);
 	}
 	
+	public boolean equals(String8Bit anObject) {
+		if (anObject instanceof String8Bit) {
+			if (this.str.length != anObject.str.length) {
+				return false;
+			}
+			for (int i = 0; i < this.str.length; i++) {
+				if (this.str[i] != anObject.str[i]) {
+					return false;
+				}
+			}
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
 	public byte[] getBytes() {
 		byte[] strbyte = new byte[str.length];
 		System.arraycopy(str, 0, strbyte, 0, this.str.length);
