@@ -137,6 +137,18 @@ public class String8Bit {
 	public int length() {
 		return str.length;
 	}
+	
+	public char[] toCharArray() {
+		char[] strchar = new char[str.length];
+		for (int i = 0; i < str.length; i++) {
+			if (str[i] < 0) {
+				strchar[i] = (char) (str[i] & 0xFF);
+			} else {
+				strchar[i] = (char) str[i];
+			}
+		}
+		return strchar;
+	}
 
 	public String toString() {
 		return new String(str);
