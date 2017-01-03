@@ -153,4 +153,8 @@ public class String8Bit {
 	public String toString() {
 		return new String(str);
 	}
+	
+	public static String8Bit valueOf(boolean b) {
+		return b ? new String8Bit("true") : new String8Bit("false");
+	}
 }
