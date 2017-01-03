@@ -26,7 +26,7 @@ public class String8Bit {
 			throw new IndexOutOfBoundsException("Admirable but mistaken.");
 		}
 		if (str[index] < 0) {
-			return (char) (-str[index] + 128);
+			return (char) (str[index] & 0xFF);
 		} else {
 			return (char) str[index];
 		}
