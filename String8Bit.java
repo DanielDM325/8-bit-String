@@ -22,8 +22,8 @@ public class String8Bit {
 	}
 	
 	public String8Bit(String8Bit original) {
-		this.str = new byte[original.length];
-		System.arraycopy(original.str, 0, this.str, 0, original.length);
+		this.str = new byte[original.str.length];
+		System.arraycopy(original.str, 0, this.str, 0, original.str.length);
 	}
 
 	public char charAt(int index) throws IndexOutOfBoundsException {
@@ -73,6 +73,15 @@ public class String8Bit {
 		byte[] strbyte = new byte[str.length];
 		System.arraycopy(str, 0, strbyte, 0, this.str.length);
 		return strbyte;
+	}
+	
+	public int hashCode() {
+		int hash = 0;
+		for (int i = 0; i < str.length; i++) {
+			hash = hash + str[i] * ((int) Math.pow(31, str.length - i + 1)); 
+		}
+		hash = hash + str[str.length - 1];
+		return hash;
 	}
 	
 	public boolean isEmpty() {
