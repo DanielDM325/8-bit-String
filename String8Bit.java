@@ -75,6 +75,16 @@ public class String8Bit {
 		return strbyte;
 	}
 	
+	public void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin) throws IndexOutOfBoundsException {
+		for (int i = srcBegin; i <= srcEnd; i++) {
+			try {
+				dst[dstBegin + i - srcBegin] = (char) str[i];
+			} catch(IndexOutOfBoundsException e) {
+				throw new IndexOutOfBoundsException("Indexes are not correct.");
+			}
+		}
+	}
+	
 	public int hashCode() {
 		int hash = 0;
 		for (int i = 0; i < str.length; i++) {
