@@ -20,6 +20,11 @@ public class String8Bit {
 			this.str[i] = (byte) str[i];
 		}
 	}
+	
+	public String8Bit(String8Bit original) {
+		this.str = new byte[original.length];
+		System.arraycopy(original.str, 0, this.str, 0, original.length);
+	}
 
 	public char charAt(int index) throws IndexOutOfBoundsException {
 		if (index < 0 || index > str.length) {
