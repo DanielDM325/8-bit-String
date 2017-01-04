@@ -53,6 +53,10 @@ public class String8Bit {
 		return new String8Bit(concatstr);
 	}
 	
+	public static copyValueOf(char[] data) {
+		return new String8Bit(data);
+	}
+	
 	public boolean equals(String8Bit anObject) {
 		if (anObject instanceof String8Bit) {
 			if (this.str.length != anObject.str.length) {
