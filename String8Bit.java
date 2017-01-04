@@ -157,4 +157,9 @@ public class String8Bit {
 	public static String8Bit valueOf(boolean b) {
 		return b ? new String8Bit("true") : new String8Bit("false");
 	}
+	
+	public static String8Bit valueOf(char c) {
+		byte[] bytechar = {(byte) c};
+		return new String8Bit(bytechar);
+	}
 }
