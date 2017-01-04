@@ -162,4 +162,8 @@ public class String8Bit {
 		byte[] bytechar = {(byte) c};
 		return new String8Bit(bytechar);
 	}
+	
+	public static String8Bit valueOf(char[] data) {
+		return new String8Bit(data);
+	}
 }
