@@ -60,19 +60,19 @@ public class String8Bit {
 	}
 
 	public String8Bit concat(String str) {
-		byte[] concatstr = new byte[this.str.length + str.length()];
-		System.arraycopy(this.str, 0, concatstr, 0, this.str.length);
+		byte[] concatStr = new byte[this.str.length + str.length()];
+		System.arraycopy(this.str, 0, concatStr, 0, this.str.length);
 		for (int i = this.str.length; i < this.str.length + str.length(); i++) {
-			concatstr[i] = (byte) str.charAt(i - this.str.length);
+			concatStr[i] = (byte) str.charAt(i - this.str.length);
 		}
-		return new String8Bit(concatstr);
+		return new String8Bit(concatStr);
 	}
 
 	public String8Bit concat(String8Bit str) {
-		byte[] concatstr = new byte[this.str.length + str.length()];
-		System.arraycopy(this.str, 0, concatstr, 0, this.str.length);
-		System.arraycopy(str.str, 0, concatstr, this.str.length, str.length());
-		return new String8Bit(concatstr);
+		byte[] concatStr = new byte[this.str.length + str.length()];
+		System.arraycopy(this.str, 0, concatStr, 0, this.str.length);
+		System.arraycopy(str.str, 0, concatStr, this.str.length, str.length());
+		return new String8Bit(concatStr);
 	}
 	
 	public static String8Bit copyValueOf(char[] data) {
@@ -96,9 +96,9 @@ public class String8Bit {
 	}
 	
 	public byte[] getBytes() {
-		byte[] strbyte = new byte[str.length];
-		System.arraycopy(str, 0, strbyte, 0, this.str.length);
-		return strbyte;
+		byte[] strByte = new byte[str.length];
+		System.arraycopy(str, 0, strByte, 0, this.str.length);
+		return strByte;
 	}
 	
 	public void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin) throws IndexOutOfBoundsException {
@@ -183,15 +183,15 @@ public class String8Bit {
 	}
 	
 	public char[] toCharArray() {
-		char[] strchar = new char[str.length];
+		char[] strChar = new char[str.length];
 		for (int i = 0; i < str.length; i++) {
 			if (str[i] < 0) {
-				strchar[i] = (char) (str[i] & 0xFF);
+				strChar[i] = (char) (str[i] & 0xFF);
 			} else {
-				strchar[i] = (char) str[i];
+				strChar[i] = (char) str[i];
 			}
 		}
-		return strchar;
+		return strChar;
 	}
 	
 	public String8Bit toLowerCase() {
