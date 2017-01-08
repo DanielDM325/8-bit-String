@@ -47,6 +47,17 @@ public class String8Bit {
 			return str[index];
 		}
 	}
+	
+	public int codePointBefore(int index) throws IndexOutOfBoundsException {
+		if (index < 1 || index > str.length) {
+			throw new IndexOutOfBoundsException();
+		}
+		if (str[index - 1] < 0) {
+			return str[index - 1] & 0xFF;
+		} else {
+			return str[index - 1];
+		}
+	}
 
 	public String8Bit concat(String str) {
 		byte[] concatstr = new byte[this.str.length + str.length()];
