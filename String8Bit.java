@@ -36,6 +36,17 @@ public class String8Bit {
 			return (char) str[index];
 		}
 	}
+	
+	public int codePointAt(int index) throws IndexOutOfBoundsException {
+		if (index < 0 || index > str.length) {
+			throw new IndexOutOfBoundsException();
+		}
+		if (str[index] < 0) {
+			return str[index] & 0xFF;
+		} else {
+			return str[index];
+		}
+	}
 
 	public String8Bit concat(String str) {
 		byte[] concatstr = new byte[this.str.length + str.length()];
@@ -53,7 +64,7 @@ public class String8Bit {
 		return new String8Bit(concatstr);
 	}
 	
-	public static copyValueOf(char[] data) {
+	public static String8Bit copyValueOf(char[] data) {
 		return new String8Bit(data);
 	}
 	
