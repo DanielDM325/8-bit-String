@@ -195,19 +195,31 @@ public class String8Bit {
 	}
 	
 	public String8Bit toLowerCase() {
-		byte[] lowerstr = new byte[str.length];
+		byte[] lowerStr = new byte[str.length];
 		for (int i = 0; i < str.length; i++) {
 			if (str[i] >= 65 && str[i] <= 90) {
-				lowerstr[i] = (byte) (str[i] + 32);
+				lowerStr[i] = (byte) (str[i] + 32);
 			} else {
-				lowerstr[i] = str[i];
+				lowerStr[i] = str[i];
 			}
 		}
-		return new String8Bit(lowerstr);
+		return new String8Bit(lowerStr);
 	}
 
 	public String toString() {
 		return new String(str);
+	}
+	
+	public String8Bit toUpperCase() {
+		byte[] upperStr = new byte[str.length];
+		for (int i = 0; i < str.length; i++) {
+			if (str[i] >= 97 && str[i] <= 122) {
+				upperStr[i] = (byte) (str[i] - 32);
+			} else {
+				upperStr[i] = str[i];
+			}
+		}
+		return new String8Bit(upperStr);
 	}
 	
 	public static String8Bit valueOf(boolean b) {
