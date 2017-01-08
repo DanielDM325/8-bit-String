@@ -138,6 +138,24 @@ public class String8Bit {
 		return -1;
 	}
 	
+	public int indexOf(int ch, int fromIndex) {
+		if (ch >= 256 || ch < 0) {
+			return -1;
+		}
+		for (int i = fromIndex; i < str.length; i++) {
+			if (str[i] < 0) {
+				if (ch == (str[i] & 0xFF)) {
+					return i;
+				}
+			} else {
+				if (ch == str[i]) {
+					return i;
+				}
+			}
+		}
+		return -1;
+	}
+	
 	public boolean isEmpty() {
 		return (str.length == 0) ? true : false;
 	}
