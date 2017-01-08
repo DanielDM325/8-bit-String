@@ -193,6 +193,18 @@ public class String8Bit {
 		}
 		return strchar;
 	}
+	
+	public String8Bit toLowerCase() {
+		byte[] lowerstr = new byte[str.length];
+		for (int i = 0; i < str.length; i++) {
+			if (str[i] >= 65 && str[i] <= 90) {
+				lowerstr[i] = (byte) (str[i] + 32);
+			} else {
+				lowerstr[i] = str[i];
+			}
+		}
+		return new String8Bit(lowerstr);
+	}
 
 	public String toString() {
 		return new String(str);
