@@ -279,4 +279,8 @@ public class String8Bit {
 		System.arraycopy(data, offset, subStr, 0, count);
 		return new String8Bit(subStr);
 	}
+	
+	public static String8Bit valueOf(Object obj) {
+		return obj == null ? new String8Bit(new byte[] {'n','u','l','l'}) : new String8Bit(obj.toString());
+	}
 }
