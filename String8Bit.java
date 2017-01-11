@@ -264,4 +264,19 @@ public class String8Bit {
 	public static String8Bit valueOf(char[] data) {
 		return new String8Bit(data);
 	}
+	
+	public static String8Bit valueOf(char[] data, int offset, int count) throws IndexOutOfBoundsException {
+		if (offset < 0) {
+			throw new IndexOutOfBoundsException("Offset is negative.");
+		}
+		if (count < 0) {
+			throw new IndexOutOfBoundsException("Count is negative.");
+		}
+		if (offset + count > data.length) {
+			throw new IndexOutOfBoundsException("Offset + count is greater than data.length");
+		}
+		char[] subStr = new char[count];
+		System.arraycopy(data, offset, subStr, 0, count);
+		return new String8Bit(subStr);
+	}
 }
