@@ -80,12 +80,6 @@ public class String8Bit {
 	}
 	
 	public static String8Bit copyValueOf(char [] data, int offset, int count) throws IndexOutOfBoundsException {
-		/* if (offset < 0 || offset >= data.length) {
-			throw new IndexOutOfBoundsException("Offset isn't correct. Offset >= length of string or offset is negative.");
-		}
-		if (offset + count > data.length) {
-			throw new IndexOutOfBoundsException("Count isn't correct. Offset + count >= length of string.");
-		} */
 		if (offset < 0) {
 			throw new IndexOutOfBoundsException("Offset is negative.");
 		}
