@@ -79,6 +79,18 @@ public class String8Bit {
 		return new String8Bit(data);
 	}
 	
+	public static String8Bit copyValueOf(char [] data, int offset, int count) throws IndexOutOfBoundsException {
+		if (offset < 0 || offset >= data.length) {
+			throw new IndexOutOfBoundsException("Offset isn't correct. Offset >= length of string or offset is negative.");
+		}
+		if (offset + count > data.length) {
+			throw new IndexOutOfBoundsException("Count isn't correct. Offset + count >= length of string.");
+		}
+		char[] subStr = new char[count];
+		System.arraycopy(data, offset, subStr, 0, count);
+		return new String8Bit(subStr);
+	}
+	
 	public boolean equals(String8Bit anObject) {
 		if (anObject instanceof String8Bit) {
 			if (this.str.length != anObject.str.length) {
