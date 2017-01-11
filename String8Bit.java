@@ -254,7 +254,7 @@ public class String8Bit {
 	}
 	
 	public static String8Bit valueOf(boolean b) {
-		return b ? new String8Bit("true") : new String8Bit("false");
+		return b ? new String8Bit(new byte[] {'t','r','u','e'}) : new String8Bit(new byte[] {'f','a','l','s','e'});
 	}
 	
 	public static String8Bit valueOf(char c) {
