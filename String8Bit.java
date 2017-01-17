@@ -280,6 +280,16 @@ public class String8Bit {
 		return new String8Bit(subStr);
 	}
 	
+	public static String8Bit valueOf(int i) {
+		int lengthNumber = (int) Math.log10(i) + 1;
+		byte[] numberStr = new byte[lengthNumber];
+		for (int j = lengthNumber - 1; j >= 0; j--) {
+			numberStr[j] = (byte) ((i % 10) + 48);
+			i = i / 10;
+		}
+		return new String8Bit(numberStr);
+	}
+	
 	public static String8Bit valueOf(Object obj) {
 		return obj == null ? new String8Bit(new byte[] {'n','u','l','l'}) : new String8Bit(obj.toString());
 	}
